@@ -1,13 +1,10 @@
 const {
     createUser,
-    findUserById,
     findUserByEmail,
-    updateUserById,
-    deleteUserById
 } = require('../../api/user/user.service');
 
 const { encryptPassword, comparePassword } = require('../../utils/Encrypt');
-const { signToken } = require('../../utils/Token');
+const { signToken, verifyToken } = require('../../utils/Token');
 
 const registerHandler = async (req, res) => {
     const { name, lastname, userType, email, password } = req.body;
@@ -40,7 +37,41 @@ const loginHandler = async (req, res) => {
     }
 }
 
+const isAuthenticated = async (req, res, next) => {
+    const bearerHeader = req.headers['authorization'];
+
+    try {
+        if (typeof bearerHeader !== 'undefined') {
+            const token = bearerHeader.split(' ')[1];
+
+            const data = await verifyToken(token);
+
+            if (!data) {
+                return res.status(401).json({ message: 'Unathorized' });
+            }
+
+            const { email } = data;
+            const user = await findUserByEmail(email);
+
+            if (!user) {
+                return res.status(404).json({ message: 'User not found' });
+            }
+
+            req.user = user;
+
+            next();
+        } else {
+            res.status(403).json({ message: 'Enter valid token' });
+        }
+
+
+    } catch (error) {
+        return res.status(500).json({ error });
+    }
+}
+
 module.exports = {
     registerHandler,
-    loginHandler
+    loginHandler,
+    isAuthenticated
 }
