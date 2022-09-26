@@ -4,12 +4,12 @@ const {
     updateProduct,
     deleteProduct,
     findAllProducts
-} = require('./product.service');
+} = require('./product.service.js');
 
 const {
     findUserById,
     updateUserById
-} = require('../user/user.service')
+} = require('../user/user.service.js')
 
 const createProductHandler = async (req, res) => {
     try {

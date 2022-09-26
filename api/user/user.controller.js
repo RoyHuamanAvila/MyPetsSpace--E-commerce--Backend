@@ -1,7 +1,7 @@
 const {
     updateUserById,
     deleteUserById
-} = require('./user.service');
+} = require('./user.service.js');
 
 const updateUserHandler = async (req, res) => {
     try {

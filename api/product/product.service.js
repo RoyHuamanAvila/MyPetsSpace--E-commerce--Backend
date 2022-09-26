@@ -1,4 +1,4 @@
-const Product = require('./product.model');
+const Product = require('./product.model.js');
 
 const createProduct = (data) => Product.create(data);
 const findAllProducts = () => Product.find();

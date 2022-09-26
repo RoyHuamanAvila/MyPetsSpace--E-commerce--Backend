@@ -1,6 +1,6 @@
-const auth = require('../auth/local/index');
-const user = require('../api/user/index');
-const product = require('../api/product/index');
+const auth = require('../auth/local/index.js');
+const user = require('../api/user/index.js');
+const product = require('../api/product/index.js');
 
 const routesConfig = function (app) {
     app.use('/auth/local', auth);

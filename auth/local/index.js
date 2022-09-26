@@ -4,7 +4,7 @@ const router = Router();
 const {
     registerHandler,
     loginHandler
-} = require('./auth.controller')
+} = require('./auth.controller.js')
 
 router.post('/register', registerHandler);
 router.post('/login', loginHandler);

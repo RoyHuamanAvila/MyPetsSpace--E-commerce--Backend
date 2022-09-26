@@ -3,9 +3,9 @@ const router = Router();
 
 const {
     createProductHandler, findProductByIdHandler, updateProductHandler, deleteProductHandler, findAllProductsHandler
-} = require('./product.controller');
+} = require('./product.controller.js');
 
-const { isAuthenticated } = require('../../auth/local/auth.controller');
+const { isAuthenticated } = require('../../auth/local/auth.controller.js');
 
 router.post('/create', isAuthenticated, createProductHandler);
 router.get('/:id', findProductByIdHandler);

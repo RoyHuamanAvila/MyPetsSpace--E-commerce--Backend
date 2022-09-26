@@ -1,10 +1,10 @@
 const {
     createUser,
     findUserByEmail,
-} = require('../../api/user/user.service');
+} = require('../../api/user/user.service.js');
 
-const { encryptPassword, comparePassword } = require('../../utils/Encrypt');
-const { signToken, verifyToken } = require('../../utils/Token');
+const { encryptPassword, comparePassword } = require('../../utils/Encrypt.js');
+const { signToken, verifyToken } = require('../../utils/Token.js');
 
 const registerHandler = async (req, res) => {
     const { name, lastname, userType, email, password } = req.body;
