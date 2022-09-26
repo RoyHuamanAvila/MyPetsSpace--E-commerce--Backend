@@ -17,7 +17,7 @@ app.listen(PORT, () => {
     console.log(`Server listen in port ${PORT}`);
 });
 app.get("/", (req, res) => {
-    res.send(`Welcome to MyPetsSpace in ${PORT}`);
+    res.json({ message: `Welcome to MyPetsSpace in ${PORT}` });
 })
 const connectToMongo = async () => {
     try {
