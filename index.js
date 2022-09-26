@@ -16,7 +16,9 @@ app.listen(PORT, () => {
     connectToMongo();
     console.log(`Server listen in port ${PORT}`);
 });
-
+app.get("/", (req, res) => {
+    res.send(`Welcome to MyPetsSpace in ${PORT}`);
+})
 const connectToMongo = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI)
