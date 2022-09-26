@@ -2,7 +2,8 @@ const {
     createProduct,
     findProductById,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    findAllProducts
 } = require('./product.service');
 
 const {
@@ -42,6 +43,16 @@ const findProductByIdHandler = async (req, res) => {
         if (!productFound) return res.status(404).json({ message: 'product not found' });
 
         return res.status(200).json(productFound)
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}
+
+const findAllProductsHandler = async (req, res) => {
+    try {
+        const allProducts = await findAllProducts();
+
+        return res.status(201).json(allProducts);
     } catch (error) {
         return res.status(500).json(error);
     }
@@ -99,6 +110,7 @@ const deleteProductHandler = async (req, res) => {
 module.exports = {
     createProductHandler,
     findProductByIdHandler,
+    findAllProductsHandler,
     updateProductHandler,
     deleteProductHandler
 }
