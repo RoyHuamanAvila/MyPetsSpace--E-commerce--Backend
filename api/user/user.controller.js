@@ -1,7 +1,21 @@
 const {
     updateUserById,
-    deleteUserById
+    deleteUserById,
+    findUserById
 } = require('./user.service.js');
+
+const findUserByIdHandler = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const userFound = await findUserById(id);
+
+        if (!userFound) return res.status(404).json({ message: 'user not found' });
+        return res.status(201).json(userFound);
+    } catch (error) {
+        return res.status(500).json(error);
+
+    }
+}
 
 const updateUserHandler = async (req, res) => {
     try {
@@ -33,5 +47,6 @@ const deleteUserHandler = async (req, res) => {
 
 module.exports = {
     updateUserHandler,
-    deleteUserHandler
+    deleteUserHandler,
+    findUserByIdHandler
 }
