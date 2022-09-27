@@ -5,9 +5,8 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    lastname: {
+    direction: {
         type: String,
-        required: true
     },
     email: {
         type: String,
@@ -22,6 +21,22 @@ const UserSchema = new Schema({
         type: String,
         enum: ['user', 'seller'],
         default: 'user'
+    },
+    posts: {
+        type: Number,
+        default: 0
+    },
+    sales: {
+        type: Number,
+        default: 0
+    },
+    followers: {
+        type: Number,
+        default: 0
+    },
+    imagePerfil: {
+        type: String,
+        default: 'https://res.cloudinary.com/dk53juigy/image/upload/v1664242797/MyPetsSpace/Utils/PerfilDefault.png'
     },
     listProducts: [{
         type: mongoose.Types.ObjectId,
