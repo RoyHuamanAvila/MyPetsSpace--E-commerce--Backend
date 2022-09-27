@@ -52,6 +52,7 @@ UserSchema.virtual('profile').get(function profile() {
     return {
         _id,
         name,
+        direction,
         email,
         posts,
         followers,
