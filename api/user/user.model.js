@@ -46,7 +46,7 @@ const UserSchema = new Schema({
 
 UserSchema.virtual('profile').get(function profile() {
     const {
-        _id, name, email, imagePerfil, posts, followers, sales
+        _id, name, email, imagePerfil, posts, followers, sales, direction
     } = this;
 
     return {
