@@ -42,6 +42,22 @@ const UserSchema = new Schema({
         type: mongoose.Types.ObjectId,
         ref: 'Product'
     }]
+}, { timestamps: true });
+
+UserSchema.virtual('profile').get(function profile() {
+    const {
+        _id, name, email, imagePerfil, posts, followers, sales
+    } = this;
+
+    return {
+        _id,
+        name,
+        email,
+        posts,
+        followers,
+        sales,
+        imagePerfil,
+    };
 });
 
 const User = mongoose.model('User', UserSchema);
