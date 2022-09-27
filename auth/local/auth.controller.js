@@ -31,7 +31,7 @@ const loginHandler = async (req, res) => {
         if (!passwordMatch) return res.status(403).json({ message: 'Wrong credentials' })
 
         const token = await signToken({ email });
-        return res.status(200).json({ token });
+        return res.status(200).json({ token, profile: userFound.profile });
     } catch (error) {
         return res.status(500).json(error);
     }
