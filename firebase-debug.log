@@ -1,0 +1,19 @@
+[debug] [2022-10-08T19:35:33.355Z] ----------------------------------------------------------------------
+[debug] [2022-10-08T19:35:33.357Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-10-08T19:35:33.358Z] CLI Version:   11.13.0
+[debug] [2022-10-08T19:35:33.358Z] Platform:      win32
+[debug] [2022-10-08T19:35:33.358Z] Node Version:  v16.15.1
+[debug] [2022-10-08T19:35:33.359Z] Time:          Sat Oct 08 2022 14:35:33 GMT-0500 (hora estándar de Perú)
+[debug] [2022-10-08T19:35:33.359Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-08T19:35:33.415Z] Field ".emulators.functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2022-10-08T19:35:33.420Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-08T19:35:33.420Z] > authorizing via signed-in user (royhuamanavila@gmail.com)
+[debug] [2022-10-08T19:35:33.420Z] [iam] checking project mypetsspace-b4e25 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-10-08T19:35:33.422Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mypetsspace-b4e25:testIamPermissions [none]
+[debug] [2022-10-08T19:35:33.423Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mypetsspace-b4e25:testIamPermissions x-goog-quota-user=projects/mypetsspace-b4e25
+[debug] [2022-10-08T19:35:33.423Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mypetsspace-b4e25:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-10-08T19:35:34.493Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mypetsspace-b4e25:testIamPermissions 200
+[debug] [2022-10-08T19:35:34.494Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mypetsspace-b4e25:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-10-08T19:35:34.494Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mypetsspace-b4e25/serviceAccounts/mypetsspace-b4e25@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-10-08T19:35:34.494Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mypetsspace-b4e25/serviceAccounts/mypetsspace-b4e25@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
